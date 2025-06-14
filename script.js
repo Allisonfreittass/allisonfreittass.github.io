@@ -105,4 +105,52 @@ document.addEventListener('DOMContentLoaded', () => {
             menuButton.classList.toggle('active');
         });
     }
+
+    // Animação de entrada para os cards de projeto
+    const animateProjects = () => {
+        const projects = document.querySelectorAll('.project-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        projects.forEach(project => {
+            project.style.opacity = '0';
+            project.style.transform = 'translateY(20px)';
+            project.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(project);
+        });
+    };
+
+    // Animação para as tags de tecnologia
+    const animateTechTags = () => {
+        const techTags = document.querySelectorAll('.tech-tag');
+        techTags.forEach((tag, index) => {
+            tag.style.opacity = '0';
+            tag.style.transform = 'scale(0.8)';
+            tag.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            
+            setTimeout(() => {
+                tag.style.opacity = '1';
+                tag.style.transform = 'scale(1)';
+            }, 100 * index);
+        });
+    };
+
+    // Inicializar animações quando a página carregar
+    animateProjects();
+    
+    // Adicionar animação para as tags de tecnologia quando o mouse passar sobre o card
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            animateTechTags();
+        });
+    });
 }); 
