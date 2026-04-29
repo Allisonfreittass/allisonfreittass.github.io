@@ -28,7 +28,7 @@ const translations = {
             },
             edu: {
                 name: 'Ciência da Computação',
-                institution: 'Em andamento',
+                institution: 'Concluído',
                 desc: 'Bacharelado em Ciência da Computação com foco em desenvolvimento de software, estruturas de dados e fundamentos de computação.'
             }
         },
@@ -73,7 +73,7 @@ const translations = {
             },
             edu: {
                 name: 'Computer Science',
-                institution: 'In progress',
+                institution: 'Completed',
                 desc: "Bachelor's degree in Computer Science with a focus on software development, data structures and fundamentals of computing."
             }
         },
