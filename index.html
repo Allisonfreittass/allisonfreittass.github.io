@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Allison Freitas — Desenvolvedor Fullstack especializado em React, Node.js e TypeScript. Criando aplicações web modernas e de alto desempenho." />
     <title>Allison Freitas — Desenvolvedor Fullstack</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,175 +13,296 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   </head>
   <body>
+
     <div class="loading-container">
         <div class="loading-content">
             <div class="loading-spinner"></div>
-            <h1 class="loading-text">Carregando</h1>
-            <p class="loading-subtext">Allison Freitas</p>
+            <p class="loading-name">Allison Freitas</p>
         </div>
     </div>
 
     <nav class="navbar">
         <div class="container">
             <div class="nav-content">
-                <h1 class="logo"><span>A</span>llison Freitas</h1>
+                <a href="#home" class="logo"><span>A</span>llison Freitas</a>
                 <ul class="nav-links">
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#home"       data-i18n="nav.home">Início</a></li>
+                    <li><a href="#about"      data-i18n="nav.about">Sobre</a></li>
+                    <li><a href="#experience" data-i18n="nav.experience">Experiência</a></li>
+                    <li><a href="#projects"   data-i18n="nav.projects">Projetos</a></li>
+                    <li><a href="#contact"    data-i18n="nav.contact">Contato</a></li>
                 </ul>
+                <div class="nav-actions">
+                    <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">
+                        <i class="fas fa-globe"></i>
+                        <span id="lang-label">EN</span>
+                    </button>
+                    <button class="menu-button" aria-label="Abrir menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
     <main>
+
+        <!-- ── Hero ── -->
         <section id="home" class="section hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Desenvolvedor Fullstack</h1>
-                    <p>Criando experiências digitais excepcionais com código limpo e design intuitivo</p>
-                    <div class="social-links">
-                        <a href="https://github.com/Allisonfreittass" target="_blank" rel="noopener noreferrer" class="social-link">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        <a href="https://instagram.com/allisonfreittass" target="_blank" rel="noopener noreferrer" class="social-link">
-                            <i class="fab fa-instagram"></i> Instagram
-                        </a>
-                        <a href="https://linkedin.com/in/allisonfreittass" target="_blank" rel="noopener noreferrer" class="social-link">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
+                    <div class="hero-text">
+                        <div class="hero-available">
+                            <span class="available-dot"></span>
+                            <span data-i18n="hero.available">Disponível para oportunidades</span>
+                        </div>
+                        <p class="hero-greeting" data-i18n="hero.greeting">Olá, eu sou</p>
+                        <h1 class="hero-name">Allison Freitas</h1>
+                        <h2 class="hero-title">
+                            <span class="typewriter"></span><span class="cursor">|</span>
+                        </h2>
+                        <p class="hero-description" data-i18n="hero.description">
+                            Criando experiências digitais com código limpo, design intuitivo e foco em performance. Apaixonado por transformar ideias em produtos reais.
+                        </p>
+                        <div class="hero-cta">
+                            <a href="#projects" class="btn btn-primary">
+                                <i class="fas fa-rocket"></i>
+                                <span data-i18n="hero.cta_projects">Ver Projetos</span>
+                            </a>
+                            <!-- <a href="./cv.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                                <i class="fas fa-file-download"></i>
+                                <span data-i18n="hero.cta_cv">Download CV</span>
+                            </a> -->
+                            <a href="#contact" class="btn btn-ghost">
+                                <i class="fas fa-envelope"></i>
+                                <span data-i18n="hero.cta_contact">Contato</span>
+                            </a>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/Allisonfreittass" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="https://instagram.com/allisonfreittass" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://linkedin.com/in/allisonfreittass" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-avatar-wrapper">
+                        <div class="hero-avatar-ring">
+                            <img src="https://github.com/Allisonfreittass.png" alt="Allison Freitas" class="hero-avatar" />
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="hero-scroll" aria-hidden="true">
+                <div class="hero-scroll-line"></div>
+            </div>
         </section>
 
+        <!-- ── Sobre ── -->
         <section id="about" class="section about">
             <div class="container">
-                <h2 class="section-title">Sobre Mim</h2>
-                <div class="card">
-                    <p>
-                        Sou um desenvolvedor fullstack apaixonado por criar soluções elegantes e eficientes. 
-                        Atualmente cursando Ciência da Computação e trabalhando na F2 Tecnologia, 
-                        combino conhecimento técnico com uma abordagem centrada no usuário para 
-                        desenvolver aplicações que fazem a diferença.
-                    </p>
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <h3 class="skill-title">Frontend</h3>
-                            <ul class="skill-list">
-                                <li>React & Next.js</li>
-                                <li>TypeScript</li>
-                                <li>HTML5 & CSS3</li>
-                                <li>Tailwind CSS</li>
-                                <li>UI/UX Design</li>
-                            </ul>
+                <h2 class="section-title" data-i18n="about.title">Sobre Mim</h2>
+                <p class="about-text" data-i18n="about.text">
+                    Sou um desenvolvedor fullstack apaixonado por criar soluções elegantes e eficientes.
+                    Atualmente cursando Ciência da Computação e trabalhando na F2 Tecnologia,
+                    combino conhecimento técnico com uma abordagem centrada no usuário para
+                    desenvolver aplicações que fazem a diferença.
+                </p>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3 class="skill-title">
+                            <i class="fas fa-laptop-code"></i>
+                            <span data-i18n="about.skills.frontend">Frontend</span>
+                        </h3>
+                        <ul class="skill-list">
+                            <li>React & Next.js</li>
+                            <li>Vue 3</li>
+                            <li>TypeScript</li>
+                            <li>HTML5 & CSS3</li>
+                            <li>Tailwind CSS</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3 class="skill-title">
+                            <i class="fas fa-server"></i>
+                            <span data-i18n="about.skills.backend">Backend</span>
+                        </h3>
+                        <ul class="skill-list">
+                            <li>Node.js & Express</li>
+                            <li>Python / FastAPI</li>
+                            <li>Java</li>
+                            <li>RESTful APIs</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3 class="skill-title">
+                            <i class="fas fa-database"></i>
+                            <span data-i18n="about.skills.database">Banco de Dados</span>
+                        </h3>
+                        <ul class="skill-list">
+                            <li>PostgreSQL</li>
+                            <li>MongoDB</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3 class="skill-title">
+                            <i class="fas fa-tools"></i>
+                            <span data-i18n="about.skills.devops">DevOps & Outros</span>
+                        </h3>
+                        <ul class="skill-list">
+                            <li>Solidity / Hardhat</li>
+                            <li>Docker</li>
+                            <li>Git & GitHub</li>
+                            <li>CI/CD</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Experiência ── -->
+        <section id="experience" class="section experience">
+            <div class="container">
+                <h2 class="section-title" data-i18n="experience.title">Experiência</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <i class="fas fa-briefcase"></i>
                         </div>
-                        <div class="skill-card">
-                            <h3 class="skill-title">Backend</h3>
-                            <ul class="skill-list">
-                                <li>Node.js</li>
-                                <li>Python</li>
-                                <li>Java</li>
-                                <li>RESTful APIs</li>
-                            </ul>
+                        <div class="card timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-badge" data-i18n="experience.present">Presente</span>
+                            </div>
+                            <h3 class="timeline-company">F2 Tecnologia Digital</h3>
+                            <p class="timeline-role" data-i18n="experience.f2.role">Desenvolvedor Fullstack</p>
+                            <p class="timeline-period">2024 — <span data-i18n="experience.present">Presente</span></p>
+                            <p class="timeline-desc" data-i18n="experience.f2.desc">
+                                Desenvolvimento de aplicações web fullstack com React, Node.js e MongoDB. Responsável por integrações com ERPs externos, autenticação JWT e deploy de aplicações SaaS em produção.
+                            </p>
                         </div>
-                        <div class="skill-card">
-                            <h3 class="skill-title">Banco de Dados</h3>
-                            <ul class="skill-list">
-                                <li>SQL</li>
-                                <li>MongoDB</li>
-                                <li>PostgreSQL</li>
-                            </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <div class="skill-card">
-                            <h3 class="skill-title">DevOps & Outros</h3>
-                            <ul class="skill-list">
-                                <li>Docker</li>
-                                <li>Git & GitHub</li>
-                                <li>CI/CD</li>
-                                <li>Testes Automatizados</li>
-                            </ul>
+                        <div class="card timeline-card">
+                            <div class="timeline-meta"></div>
+                            <h3 class="timeline-company" data-i18n="experience.edu.name">Ciência da Computação</h3>
+                            <p class="timeline-role" data-i18n="experience.edu.institution">Em andamento</p>
+                            <p class="timeline-period">2023 — <span data-i18n="experience.present">Presente</span></p>
+                            <p class="timeline-desc" data-i18n="experience.edu.desc">
+                                Bacharelado em Ciência da Computação com foco em desenvolvimento de software, estruturas de dados e fundamentos de computação.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ── Projetos ── -->
         <section id="projects" class="section projects">
             <div class="container">
-                <h2 class="section-title">Projetos</h2>
+                <h2 class="section-title" data-i18n="projects.title">Projetos</h2>
                 <div class="projects-grid">
                     <div class="card project-card">
                         <div class="project-header">
-                            <i class="fas fa-rocket"></i>
-                            <h3>UniHits</h3>
+                            <i class="fas fa-brain"></i>
+                            <h3>Thoth AI</h3>
                         </div>
-                        <p>Uma landing page moderna e responsiva que demonstra habilidades em design web, animações suaves e otimização para diferentes dispositivos.</p>
+                        <p data-i18n="projects.thoth.desc">Plataforma SaaS completa para treinamento e chat com LLMs. Implementa RAG para respostas baseadas em documentos, fine-tuning assíncrono via microserviço Python, pagamentos recorrentes com Stripe e métricas de uso em tempo real.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Responsive Design</span>
+                            <span class="tech-tag">Next.js 14</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Python / FastAPI</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">OpenAI / Groq</span>
+                            <span class="tech-tag">Stripe</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Allisonfreittass/UniHits" target="_blank" class="btn btn-primary">
-                                <i class="fab fa-github"></i> Ver Código
-                            </a>
-                            <a href="https://allisonfreittass.github.io/UniHits/" target="_blank" class="btn btn-secondary">
-                                <i class="fas fa-external-link-alt"></i> Demo
+                            <a href="https://github.com/Allisonfreittass/thothai-web" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fab fa-github"></i>
+                                <span data-i18n="projects.code">Código</span>
                             </a>
                         </div>
                     </div>
                     <div class="card project-card">
                         <div class="project-header">
-                            <i class="fas fa-tasks"></i>
-                            <h3>DaysNote API</h3>
+                            <i class="fas fa-cubes"></i>
+                            <h3>MyBlock — Frontend</h3>
                         </div>
-                        <p>API RESTful para gerenciamento de notas e tarefas, desenvolvida com Node.js e Express. Inclui autenticação, CRUD completo e sistema de priorização.</p>
+                        <p data-i18n="projects.myblock_front.desc">Interface da plataforma de gestão de imóveis baseada em blockchain. Inclui autenticação, dashboard, portfólio de propriedades e fluxo completo de contratos de aluguel via smart contracts.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue 3</span>
+                            <span class="tech-tag">Vite</span>
+                            <span class="tech-tag">Pinia</span>
+                            <span class="tech-tag">Ethers.js</span>
+                            <span class="tech-tag">Web3</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Allisonfreittass/myblock-frontend" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fab fa-github"></i>
+                                <span data-i18n="projects.code">Código</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card project-card">
+                        <div class="project-header">
+                            <i class="fas fa-file-contract"></i>
+                            <h3>MyBlock — Backend</h3>
+                        </div>
+                        <p data-i18n="projects.myblock_back.desc">API e smart contracts do MyBlock. Arquitetura híbrida Web2/Web3 com contratos Solidity que automatizam aluguéis, aplicam multas por atraso (10%) e controlam status via blockchain. Inclui agendamento via cron e autenticação JWT.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Node.js</span>
                             <span class="tech-tag">Express</span>
                             <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Solidity</span>
+                            <span class="tech-tag">Hardhat</span>
                             <span class="tech-tag">JWT</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Allisonfreittass/DaysNoteApi" target="_blank" class="btn btn-primary">
-                                <i class="fab fa-github"></i> Ver Código
-                            </a>
-                            <a href="https://daysnote-api.onrender.com/docs" target="_blank" class="btn btn-secondary">
-                                <i class="fas fa-book"></i> Documentação
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card project-card">
-                        <div class="project-header">
-                            <i class="fas fa-code"></i>
-                            <h3>Portfólio</h3>
-                        </div>
-                        <p>Meu portfólio pessoal desenvolvido com foco em design minimalista e experiência do usuário. Inclui animações suaves e layout totalmente responsivo.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Font Awesome</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Allisonfreittass/allisonfreittass.github.io" target="_blank" class="btn btn-primary">
-                                <i class="fab fa-github"></i> Ver Código
+                            <a href="https://github.com/Allisonfreittass/myblock-backend" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fab fa-github"></i>
+                                <span data-i18n="projects.code">Código</span>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- ── Contato ── -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="section-title" data-i18n="contact.title">Contato</h2>
+                <div class="contact-card">
+                    <p class="contact-text" data-i18n="contact.text">Tem um projeto em mente ou quer trocar uma ideia? Me mande uma mensagem — ficarei feliz em conversar!</p>
+                    <div class="contact-links">
+                        <a href="https://linkedin.com/in/allisonfreittass" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/Allisonfreittass" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Allison Freitas. Todos os direitos reservados.</p>
+            <p>&copy; <span id="copyright-year"></span> Allison Freitas. <span data-i18n="footer">Todos os direitos reservados.</span></p>
         </div>
     </footer>
 
     <script src="script.js"></script>
   </body>
-</html> 
+</html>
