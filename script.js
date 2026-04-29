@@ -16,7 +16,7 @@ const translations = {
         },
         about: {
             title: 'Sobre Mim',
-            text: 'Sou um desenvolvedor fullstack apaixonado por criar soluções elegantes e eficientes. Atualmente cursando Ciência da Computação e trabalhando na F2 Tecnologia, combino conhecimento técnico com uma abordagem centrada no usuário para desenvolver aplicações que fazem a diferença.',
+            text: 'Sou um desenvolvedor fullstack apaixonado por criar soluções elegantes e eficientes. Formado em Ciências da Computação e trabalhando na F2 Tecnologia, combino conhecimento técnico com uma abordagem centrada no usuário para desenvolver aplicações que fazem a diferença.',
             skills: { frontend: 'Frontend', backend: 'Backend', database: 'Banco de Dados', devops: 'DevOps & Outros' }
         },
         experience: {
@@ -61,7 +61,7 @@ const translations = {
         },
         about: {
             title: 'About Me',
-            text: "I'm a fullstack developer passionate about creating elegant and efficient solutions. Currently studying Computer Science and working at F2 Tecnologia, I combine technical knowledge with a user-centered approach to build applications that make a difference.",
+            text: "I'm a fullstack developer passionate about creating elegant and efficient solutions. graduated in Computer Science and working at F2 Tecnologia, I combine technical knowledge with a user-centered approach to build applications that make a difference.",
             skills: { frontend: 'Frontend', backend: 'Backend', database: 'Database', devops: 'DevOps & Others' }
         },
         experience: {
