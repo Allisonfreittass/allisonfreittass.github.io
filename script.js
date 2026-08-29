@@ -1,245 +1,334 @@
-// ── Translations ──
+// ─────────────────────────────────────────────────────────────────────────
+// Conteúdo em PT e EN. Esta é a única fonte de verdade dos textos —
+// o HTML carrega o PT como fallback para quando o JS não roda.
+// ─────────────────────────────────────────────────────────────────────────
 const translations = {
     pt: {
-        nav: {
-            home: 'Início', about: 'Sobre', experience: 'Experiência',
-            projects: 'Projetos', contact: 'Contato'
-        },
+        a11y: { skip: 'Pular para o conteúdo', menu: 'Abrir menu', menuClose: 'Fechar menu' },
+        nav: { systems: 'Sistemas', path: 'Percurso', tools: 'Ferramentas', contact: 'Contato' },
         hero: {
-            available: 'Disponível',
-            greeting: 'Olá, eu sou',
-            roles: ['Desenvolvedor Fullstack', 'Engenheiro Web3', 'AI Engineer', 'Desenvolvedor Backend'],
-            description: 'Criando experiências digitais com código limpo, design intuitivo e foco em performance. Apaixonado por transformar ideias em produtos reais.',
-            cta_projects: 'Ver Projetos',
-            cta_cv: 'Download CV',
-            cta_contact: 'Contato'
+            eyebrow: 'Backend, APIs e automação · F2 Tecnologia · Aberto a propostas',
+            thesis: 'Eu construo sistemas que continuam rodando quando eu não estou olhando.',
+            lede: 'Um assistente que transcreve a chamada sem o áudio sair da máquina, contratos que aplicam a própria multa, crons que fecham o mês. Backend, APIs e automação — com React na frente quando precisa.'
         },
-        about: {
-            title: 'Sobre Mim',
-            text: 'Sou um desenvolvedor fullstack apaixonado por criar soluções elegantes e eficientes. Formado em Ciências da Computação e trabalhando na F2 Tecnologia, combino conhecimento técnico com uma abordagem centrada no usuário para desenvolver aplicações que fazem a diferença.',
-            skills: { frontend: 'Frontend', backend: 'Backend', database: 'Banco de Dados', devops: 'DevOps & Outros' }
+        machine: {
+            source: 'MyBlock · contrato de aluguel',
+            s0: 'criado', s1: 'ativo', s2: 'vencido', s3: 'multa 10%', s4: 'quitado',
+            logs: [
+                'contrato publicado on-chain — vigência de 30 dias',
+                'pagamento em dia, nada a fazer',
+                'cron das 00:00 detecta o atraso',
+                'o contrato aplica 10% sobre o valor, sozinho',
+                'pagamento liquidado — status encerrado'
+            ]
         },
-        experience: {
-            title: 'Experiência',
-            present: 'Presente',
+        systems: {
+            title: 'Sistemas',
+            note: 'Três produtos completos. Cada um resolve alguma coisa que, sem ele, alguém teria que fazer na mão todo dia.',
+            autonomous: 'Roda sozinho',
+            stack: 'Pilha',
+            layers: 'Camadas',
+            code: 'Ver código',
+            live: 'Ver funcionando',
+            auris: {
+                kind: 'Desktop · Áudio + LLM',
+                desc: 'Uma janelinha que fica por cima da reunião e transforma cada call em resumo, próximos passos e o e-mail de follow-up já escrito. Captura o áudio do sistema e do microfone em canais separados, transcreve na própria máquina com faster-whisper e só então conversa com o modelo. Nenhum bot entra na chamada.',
+                auto: [
+                    'captura por WASAPI loopback com detecção de voz — ninguém aperta gravar',
+                    'a transcrição roda local; o áudio da reunião não sai do computador',
+                    'o sidecar Python é supervisionado e volta sozinho, com backoff'
+                ],
+                aside: 'Electron endurecido: sandbox, isolamento de contexto, CSP estrita e a chave de API cifrada com o safeStorage do Windows.'
+            },
+            thoth: {
+                kind: 'SaaS · LLM',
+                desc: 'Treina e conversa com modelos de linguagem sobre os documentos que você sobe. RAG para respostas ancoradas na fonte, fine-tuning assíncrono num microserviço Python, cobrança recorrente e métricas de uso em tempo real.',
+                auto: [
+                    'fine-tuning entra em fila e devolve o modelo pronto',
+                    'webhooks do Stripe renovam e cortam assinaturas',
+                    'métricas de uso apuradas em tempo real'
+                ]
+            },
+            myblock: {
+                kind: 'Web3 · Imóveis',
+                desc: 'Gestão de aluguéis onde o contrato é o sistema. Um contrato Solidity guarda o status, aplica 10% de multa no atraso e encerra o aluguel sem ninguém apertar botão. Arquitetura híbrida: Web2 para o que precisa ser rápido, Web3 para o que precisa ser incontestável.',
+                auto: [
+                    'cron verifica vencimentos todo dia à meia-noite',
+                    'a multa de 10% é aplicada pelo próprio contrato',
+                    'o status do aluguel vive na blockchain, não num banco'
+                ],
+                l0: 'Interface',
+                l1: 'Contratos e API'
+            }
+        },
+        path: {
+            title: 'Percurso',
+            now: 'atual',
             f2: {
-                role: 'Desenvolvedor Fullstack',
-                desc: 'Desenvolvimento de aplicações web fullstack com React, Node.js e MongoDB. Responsável por integrações com ERPs externos, autenticação JWT e deploy de aplicações SaaS em produção.'
+                when: 'mar 2025 —',
+                role: 'Full-Stack Engineer',
+                desc: 'Duas APIs REST em produção, com endpoints públicos e webhooks ligando a plataforma a ERPs de terceiros. Deploy em Cloudflare Workers e Pages. Três fluxos de automação com n8n e LLMs entregues, cortando trabalho manual da operação. Rotina em inglês e revisão de código no GitHub.'
             },
             edu: {
                 name: 'Ciência da Computação',
-                institution: 'Concluído',
-                desc: 'Bacharelado em Ciência da Computação com foco em desenvolvimento de software, estruturas de dados e fundamentos de computação.'
+                role: 'UNIS-MG · bacharelado concluído',
+                desc: 'Centro Universitário do Sul de Minas. Desenvolvimento de software, estruturas de dados e fundamentos de computação.'
             }
         },
-        projects: {
-            title: 'Projetos',
-            code: 'Código',
-            thoth: { desc: 'Plataforma SaaS completa para treinamento e chat com LLMs. Implementa RAG para respostas baseadas em documentos, fine-tuning assíncrono via microserviço Python, pagamentos recorrentes com Stripe e métricas de uso em tempo real.' },
-            myblock_front: { desc: 'Interface da plataforma de gestão de imóveis baseada em blockchain. Inclui autenticação, dashboard, portfólio de propriedades e fluxo completo de contratos de aluguel via smart contracts.' },
-            myblock_back: { desc: 'API e smart contracts do MyBlock. Arquitetura híbrida Web2/Web3 com contratos Solidity que automatizam aluguéis, aplicam multas por atraso (10%) e controlam status via blockchain. Inclui agendamento via cron e autenticação JWT.' }
+        tools: {
+            title: 'Ferramentas',
+            langs: 'Linguagens', backend: 'Backend', front: 'Frente',
+            ai: 'IA e automação', data: 'Dados', ship: 'Entrega'
         },
         contact: {
-            title: 'Contato',
-            text: 'Tem um projeto em mente ou quer trocar uma ideia? Me mande uma mensagem — ficarei feliz em conversar!'
+            eyebrow: 'Aberto a propostas',
+            line: 'Se você tem um sistema que precisa rodar sem supervisão, eu quero ouvir sobre ele.',
+            meta: 'Varginha, MG · Aberto a realocação · Português nativo, inglês fluente',
+            cv: 'Currículo (PDF)',
+            cvFile: 'Allison_Freitas_Engenheiro_Software_CV_PT.pdf'
         },
-        footer: 'Todos os direitos reservados.'
+        footer: { note: 'Escrito à mão em HTML, CSS e JavaScript.' }
     },
+
     en: {
-        nav: {
-            home: 'Home', about: 'About', experience: 'Experience',
-            projects: 'Projects', contact: 'Contact'
-        },
+        a11y: { skip: 'Skip to content', menu: 'Open menu', menuClose: 'Close menu' },
+        nav: { systems: 'Systems', path: 'Path', tools: 'Tools', contact: 'Contact' },
         hero: {
-            available: 'Open to opportunities',
-            greeting: "Hi, I'm",
-            roles: ['Fullstack Developer', 'Web3 Engineer', 'AI Engineer', 'Backend Developer'],
-            description: 'Building digital experiences with clean code, intuitive design and a focus on performance. Passionate about turning ideas into real products.',
-            cta_projects: 'View Projects',
-            cta_cv: 'Download CV',
-            cta_contact: 'Contact'
+            eyebrow: 'Backend, APIs and automation · F2 Tecnologia · Open to offers',
+            thesis: 'I build systems that keep running when I am not watching.',
+            lede: 'An assistant that transcribes the call without the audio leaving the machine, contracts that charge their own late fee, crons that close the month. Backend, APIs and automation — with React up front when it is needed.'
         },
-        about: {
-            title: 'About Me',
-            text: "I'm a fullstack developer passionate about creating elegant and efficient solutions. graduated in Computer Science and working at F2 Tecnologia, I combine technical knowledge with a user-centered approach to build applications that make a difference.",
-            skills: { frontend: 'Frontend', backend: 'Backend', database: 'Database', devops: 'DevOps & Others' }
+        machine: {
+            source: 'MyBlock · rental contract',
+            s0: 'created', s1: 'active', s2: 'overdue', s3: '10% fee', s4: 'settled',
+            logs: [
+                'contract published on-chain — 30 day term',
+                'payment on time, nothing to do',
+                'midnight cron detects the delay',
+                'the contract applies 10% on its own',
+                'payment settled — status closed'
+            ]
         },
-        experience: {
-            title: 'Experience',
-            present: 'Present',
+        systems: {
+            title: 'Systems',
+            note: 'Three complete products. Each one handles something a person would otherwise do by hand every day.',
+            autonomous: 'Runs on its own',
+            stack: 'Stack',
+            layers: 'Layers',
+            code: 'View code',
+            live: 'See it running',
+            auris: {
+                kind: 'Desktop · Audio + LLM',
+                desc: 'A small window that sits over the meeting and turns every call into a summary, next steps and a follow-up email already written. It captures system and microphone audio on separate channels, transcribes on the machine itself with faster-whisper, and only then talks to the model. No bot joins the call.',
+                auto: [
+                    'WASAPI loopback capture with voice detection — nobody presses record',
+                    'transcription runs locally; the meeting audio never leaves the computer',
+                    'the Python sidecar is supervised and comes back on its own, with backoff'
+                ],
+                aside: 'Hardened Electron: sandbox, context isolation, strict CSP and the API key encrypted with Windows safeStorage.'
+            },
+            thoth: {
+                kind: 'SaaS · LLM',
+                desc: 'Train and chat with language models over the documents you upload. RAG for answers anchored to the source, asynchronous fine-tuning in a Python microservice, recurring billing and usage metrics in real time.',
+                auto: [
+                    'fine-tuning queues up and returns a finished model',
+                    'Stripe webhooks renew and cut off subscriptions',
+                    'usage metrics computed in real time'
+                ]
+            },
+            myblock: {
+                kind: 'Web3 · Real estate',
+                desc: 'Rental management where the contract is the system. A Solidity contract holds the status, applies a 10% late fee and closes the rental with nobody pressing a button. Hybrid architecture: Web2 for what has to be fast, Web3 for what has to be undisputed.',
+                auto: [
+                    'a cron checks due dates every day at midnight',
+                    'the 10% fee is applied by the contract itself',
+                    'rental status lives on-chain, not in a database'
+                ],
+                l0: 'Interface',
+                l1: 'Contracts and API'
+            }
+        },
+        path: {
+            title: 'Path',
+            now: 'current',
             f2: {
-                role: 'Fullstack Developer',
-                desc: 'Fullstack web application development using React, Node.js and MongoDB. Responsible for external ERP integrations, JWT authentication and production deployment of SaaS applications.'
+                when: 'Mar 2025 —',
+                role: 'Full-Stack Engineer',
+                desc: 'Two production REST APIs, with public endpoints and webhooks connecting the platform to third-party ERPs. Deployment on Cloudflare Workers and Pages. Three automation flows with n8n and LLMs delivered, cutting manual work out of operations. Daily English and code review on GitHub.'
             },
             edu: {
                 name: 'Computer Science',
-                institution: 'Completed',
-                desc: "Bachelor's degree in Computer Science with a focus on software development, data structures and fundamentals of computing."
+                role: 'UNIS-MG · B.Sc. completed',
+                desc: 'Centro Universitário do Sul de Minas. Software development, data structures and the fundamentals of computing.'
             }
         },
-        projects: {
-            title: 'Projects',
-            code: 'Code',
-            thoth: { desc: 'Complete SaaS platform for LLM training and chat. Implements RAG for document-based responses, asynchronous fine-tuning via Python microservice, recurring payments with Stripe and real-time usage metrics.' },
-            myblock_front: { desc: 'Frontend for a blockchain-based property management platform. Includes authentication, dashboard, property portfolio and full rental contract flow via smart contracts.' },
-            myblock_back: { desc: 'API and smart contracts for MyBlock. Hybrid Web2/Web3 architecture with Solidity contracts that automate rentals, apply late fees (10%) and track status on the blockchain. Includes cron scheduling and JWT authentication.' }
+        tools: {
+            title: 'Tools',
+            langs: 'Languages', backend: 'Backend', front: 'Front',
+            ai: 'AI and automation', data: 'Data', ship: 'Ship'
         },
         contact: {
-            title: 'Contact',
-            text: "Have a project in mind or want to chat? Send me a message — I'd love to talk!"
+            eyebrow: 'Open to offers',
+            line: 'If you have a system that needs to run unattended, I want to hear about it.',
+            meta: 'Varginha, Brazil · Open to relocation · Native Portuguese, fluent English',
+            cv: 'Résumé (PDF)',
+            cvFile: 'Allison_Freitas_Software_Engineer_CV.pdf'
         },
-        footer: 'All rights reserved.'
+        footer: { note: 'Hand-written in HTML, CSS and JavaScript.' }
     }
 };
 
-// ── Helpers ──
-function getNestedValue(obj, path) {
-    return path.split('.').reduce((acc, key) => acc?.[key], obj) ?? '';
-}
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-// ── Typewriter ──
-let typewriterTimeout = null;
-let twState = { index: 0, char: 0, deleting: false };
+const lookup = (obj, path) => path.split('.').reduce((acc, key) => acc?.[key], obj);
 
-function startTypewriter(roles) {
-    clearTimeout(typewriterTimeout);
-    twState = { index: 0, char: 0, deleting: false };
-    const el = document.querySelector('.typewriter');
-    if (!el) return;
+// ─────────────────────────────────────────────────────────────────────────
+// Máquina de estados do hero
+// O HTML já vem no estado final, então sem JS a figura continua legível.
+// ─────────────────────────────────────────────────────────────────────────
+const STEP_DELAYS = [700, 900, 1000, 900, 1600];
+let machineTimer = null;
 
-    function tick() {
-        const current = roles[twState.index];
-        twState.char += twState.deleting ? -1 : 1;
-        el.textContent = current.substring(0, twState.char);
+function renderMachine(lang, animate) {
+    const rail = document.getElementById('machine-rail');
+    const logEl = document.getElementById('machine-log');
+    if (!rail || !logEl) return;
 
-        let delay = twState.deleting ? 40 : 80;
+    const nodes = Array.from(rail.querySelectorAll('.node'));
+    const logs = translations[lang].machine.logs;
+    clearTimeout(machineTimer);
 
-        if (!twState.deleting && twState.char === current.length) {
-            delay = 2200;
-            twState.deleting = true;
-        } else if (twState.deleting && twState.char === 0) {
-            twState.deleting = false;
-            twState.index = (twState.index + 1) % roles.length;
-            delay = 300;
-        }
+    const settle = () => {
+        nodes.forEach(node => node.classList.add('is-done'));
+        rail.style.setProperty('--progress', '1');
+        logEl.textContent = logs[logs.length - 1];
+    };
 
-        typewriterTimeout = setTimeout(tick, delay);
+    if (!animate || prefersReducedMotion.matches) {
+        settle();
+        return;
     }
 
-    tick();
+    nodes.forEach(node => node.classList.remove('is-done'));
+    rail.style.setProperty('--progress', '0');
+    logEl.textContent = '';
+
+    let i = 0;
+    const step = () => {
+        nodes[i].classList.add('is-done');
+        logEl.textContent = logs[i];
+        rail.style.setProperty('--progress', String(i / (nodes.length - 1)));
+        i += 1;
+        if (i < nodes.length) machineTimer = setTimeout(step, STEP_DELAYS[i]);
+    };
+
+    machineTimer = setTimeout(step, STEP_DELAYS[0]);
 }
 
-// ── i18n ──
-let currentLang = localStorage.getItem('lang') || 'pt';
+// ─────────────────────────────────────────────────────────────────────────
+// Idioma
+// ─────────────────────────────────────────────────────────────────────────
+let currentLang = localStorage.getItem('lang') === 'en' ? 'en' : 'pt';
 
 function applyTranslations(lang) {
     const data = translations[lang];
 
     document.querySelectorAll('[data-i18n]').forEach(el => {
-        const value = getNestedValue(data, el.getAttribute('data-i18n'));
+        const value = lookup(data, el.getAttribute('data-i18n'));
         if (typeof value === 'string') el.textContent = value;
+    });
+
+    document.querySelectorAll('[data-i18n-label]').forEach(el => {
+        const value = lookup(data, el.getAttribute('data-i18n-label'));
+        if (typeof value === 'string') el.setAttribute('aria-label', value);
+    });
+
+    // O curriculo segue o idioma do site: PT no site em portugues, EN no ingles.
+    document.querySelectorAll('[data-i18n-href]').forEach(el => {
+        const value = lookup(data, el.getAttribute('data-i18n-href'));
+        if (typeof value === 'string') el.setAttribute('href', value);
     });
 
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
     document.getElementById('lang-label').textContent = lang === 'pt' ? 'EN' : 'PT';
 
-    startTypewriter(data.hero.roles);
     localStorage.setItem('lang', lang);
 }
 
-// ── Main ──
+// ─────────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-
-    // Copyright year
-    const yearEl = document.getElementById('copyright-year');
+    const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Loading screen
-    const loadingContainer = document.querySelector('.loading-container');
-    const hideLoader = () => {
-        loadingContainer.classList.add('fade-out');
-        setTimeout(() => {
-            loadingContainer.style.display = 'none';
-            document.body.classList.add('loaded');
-        }, 500);
-    };
-
-    if (document.readyState === 'complete') {
-        setTimeout(hideLoader, 300);
-    } else {
-        window.addEventListener('load', () => setTimeout(hideLoader, 300));
-    }
-
-    // Initialize language
     applyTranslations(currentLang);
+    renderMachine(currentLang, true);
 
-    // Language toggle
     document.getElementById('lang-toggle').addEventListener('click', () => {
         currentLang = currentLang === 'pt' ? 'en' : 'pt';
         applyTranslations(currentLang);
+        // Sem reanimar: só troca o texto do log para o idioma novo.
+        renderMachine(currentLang, false);
     });
 
-    // Smooth scroll — offset by navbar
-    const navbar = document.querySelector('.navbar');
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const target = document.querySelector(this.getAttribute('href'));
-            if (!target) return;
-            e.preventDefault();
-            const top = target.getBoundingClientRect().top + window.scrollY - navbar.offsetHeight;
-            window.scrollTo({ top, behavior: 'smooth' });
-        });
-    });
+    // ── Seção corrente na navegação ──
+    const topbar = document.querySelector('.topbar');
+    const nav = document.getElementById('nav');
+    const navLinks = Array.from(nav.querySelectorAll('a'));
+    const sections = navLinks
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
 
-    // Active nav on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    let ticking = false;
 
-    window.addEventListener('scroll', () => {
+    const updateCurrent = () => {
+        ticking = false;
         let current = '';
         sections.forEach(section => {
-            if (window.scrollY >= section.offsetTop - navbar.offsetHeight - 80) {
+            if (window.scrollY >= section.offsetTop - topbar.offsetHeight - 100) {
                 current = section.id;
             }
         });
         navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+            link.classList.toggle('is-current', link.getAttribute('href') === `#${current}`);
         });
+    };
+
+    // Lê offsetTop no máximo uma vez por frame, em vez de a cada evento.
+    window.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(updateCurrent);
     }, { passive: true });
 
-    // Mobile menu
-    const menuButton = document.querySelector('.menu-button');
-    const navLinksList = document.querySelector('.nav-links');
+    updateCurrent();
 
-    if (menuButton && navLinksList) {
-        menuButton.addEventListener('click', () => {
-            const isOpen = navLinksList.classList.toggle('open');
-            menuButton.classList.toggle('open', isOpen);
-            menuButton.setAttribute('aria-expanded', String(isOpen));
-        });
+    // ── Menu no mobile ──
+    const menuButton = document.getElementById('menu-button');
 
-        navLinksList.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinksList.classList.remove('open');
-                menuButton.classList.remove('open');
-                menuButton.setAttribute('aria-expanded', 'false');
-            });
-        });
-    }
+    const setMenu = (open) => {
+        nav.classList.toggle('is-open', open);
+        menuButton.classList.toggle('is-open', open);
+        menuButton.setAttribute('aria-expanded', String(open));
+        const labels = translations[currentLang].a11y;
+        menuButton.setAttribute('aria-label', open ? labels.menuClose : labels.menu);
+    };
 
-    // Scroll animations
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-            setTimeout(() => entry.target.classList.remove('js-animate'), 700);
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-    document.querySelectorAll('.section-title, .skill-card, .card, .about-text, .contact-card, .timeline-item').forEach(el => {
-        el.classList.add('js-animate');
-        observer.observe(el);
+    menuButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setMenu(!nav.classList.contains('is-open'));
     });
 
+    navLinks.forEach(link => link.addEventListener('click', () => setMenu(false)));
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key !== 'Escape' || !nav.classList.contains('is-open')) return;
+        setMenu(false);
+        menuButton.focus();
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!nav.classList.contains('is-open')) return;
+        if (nav.contains(e.target) || menuButton.contains(e.target)) return;
+        setMenu(false);
+    });
 });

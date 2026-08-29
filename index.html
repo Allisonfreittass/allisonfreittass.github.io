@@ -2,305 +2,325 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Allison Freitas — Desenvolvedor Fullstack especializado em React, Node.js e TypeScript. Criando aplicações web modernas e de alto desempenho." />
-    <title>Allison Freitas — Desenvolvedor Fullstack</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <title>Allison Freitas — Sistemas que rodam sozinhos</title>
+    <meta name="description" content="Allison Freitas, engenheiro de software: backend, APIs e automação. Assistente de chamadas com transcrição local, contratos Solidity que aplicam a própria multa, automações com n8n e LLMs em produção." />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="canonical" href="https://allisonfreittass.github.io/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://allisonfreittass.github.io/" />
+    <meta property="og:site_name" content="Allison Freitas" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Allison Freitas — Sistemas que rodam sozinhos" />
+    <meta property="og:description" content="Backend, APIs e automação. Transcrição local com faster-whisper, contratos Solidity que aplicam a própria multa, automações com n8n e LLMs." />
+    <meta property="og:image" content="https://github.com/Allisonfreittass.png" />
+    <meta property="og:image:alt" content="Foto de Allison Freitas" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Allison Freitas — Sistemas que rodam sozinhos" />
+    <meta name="twitter:description" content="Backend, APIs e automação. Transcrição local com faster-whisper, contratos Solidity que aplicam a própria multa, automações com n8n e LLMs." />
+    <meta name="twitter:image" content="https://github.com/Allisonfreittass.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
+    <a class="skip-link" href="#conteudo" data-i18n="a11y.skip">Pular para o conteúdo</a>
 
-    <div class="loading-container">
-        <div class="loading-content">
-            <div class="loading-spinner"></div>
-            <p class="loading-name">Allison Freitas</p>
+    <header class="topbar">
+      <div class="shell topbar-inner">
+        <a class="wordmark" href="#topo">
+          Allison Freitas
+          <span class="wordmark-state" aria-hidden="true"></span>
+        </a>
+
+        <nav class="nav" id="nav" aria-label="Seções">
+          <a href="#sistemas"    data-i18n="nav.systems">Sistemas</a>
+          <a href="#percurso"    data-i18n="nav.path">Percurso</a>
+          <a href="#ferramentas" data-i18n="nav.tools">Ferramentas</a>
+          <a href="#contato"     data-i18n="nav.contact">Contato</a>
+        </nav>
+
+        <div class="topbar-actions">
+          <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">
+            <span id="lang-label">EN</span>
+          </button>
+          <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="nav" data-i18n-label="a11y.menu" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+          </button>
         </div>
-    </div>
+      </div>
+    </header>
 
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <a href="#home" class="logo"><span>A</span>llison Freitas</a>
-                <ul class="nav-links">
-                    <li><a href="#home"       data-i18n="nav.home">Início</a></li>
-                    <li><a href="#about"      data-i18n="nav.about">Sobre</a></li>
-                    <li><a href="#experience" data-i18n="nav.experience">Experiência</a></li>
-                    <li><a href="#projects"   data-i18n="nav.projects">Projetos</a></li>
-                    <li><a href="#contact"    data-i18n="nav.contact">Contato</a></li>
-                </ul>
-                <div class="nav-actions">
-                    <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">
-                        <i class="fas fa-globe"></i>
-                        <span id="lang-label">EN</span>
-                    </button>
-                    <button class="menu-button" aria-label="Abrir menu" aria-expanded="false">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-            </div>
+    <main id="conteudo">
+
+      <!-- ─────────── Hero ─────────── -->
+      <section class="band band--pine hero" id="topo">
+        <div class="shell">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Backend, APIs e automação · F2 Tecnologia · Aberto a propostas</p>
+
+          <h1 class="hero-thesis" data-i18n="hero.thesis">Eu construo sistemas que continuam rodando quando eu não estou olhando.</h1>
+
+          <p class="hero-lede" data-i18n="hero.lede">Um assistente que transcreve a chamada sem o áudio sair da máquina, contratos que aplicam a própria multa, crons que fecham o mês. Backend, APIs e automação — com React na frente quando precisa.</p>
+
+          <!-- ── Elemento assinatura: a máquina de estados de um contrato real ── -->
+          <figure class="machine">
+            <figcaption class="machine-cap">
+              <span data-i18n="machine.source">MyBlock · contrato de aluguel</span>
+              <span class="machine-lang">Solidity</span>
+            </figcaption>
+
+            <ol class="machine-rail" id="machine-rail">
+              <li class="node is-done">
+                <span class="node-mark" aria-hidden="true"></span>
+                <span class="node-name" data-i18n="machine.s0">criado</span>
+                <span class="node-when">d+0</span>
+              </li>
+              <li class="node is-done">
+                <span class="node-mark" aria-hidden="true"></span>
+                <span class="node-name" data-i18n="machine.s1">ativo</span>
+                <span class="node-when">d+1</span>
+              </li>
+              <li class="node is-done">
+                <span class="node-mark" aria-hidden="true"></span>
+                <span class="node-name" data-i18n="machine.s2">vencido</span>
+                <span class="node-when">d+31</span>
+              </li>
+              <li class="node node--alert is-done">
+                <span class="node-mark" aria-hidden="true"></span>
+                <span class="node-name" data-i18n="machine.s3">multa 10%</span>
+                <span class="node-when">d+31</span>
+              </li>
+              <li class="node is-done">
+                <span class="node-mark" aria-hidden="true"></span>
+                <span class="node-name" data-i18n="machine.s4">quitado</span>
+                <span class="node-when">d+33</span>
+              </li>
+            </ol>
+
+            <p class="machine-log" id="machine-log" aria-live="off">pagamento liquidado — status encerrado</p>
+          </figure>
         </div>
-    </nav>
+      </section>
 
-    <main>
+      <!-- ─────────── Sistemas ─────────── -->
+      <section class="band" id="sistemas">
+        <div class="shell">
+          <h2 class="band-title" data-i18n="systems.title">Sistemas</h2>
+          <p class="band-note" data-i18n="systems.note">Três produtos completos. Cada um resolve alguma coisa que, sem ele, alguém teria que fazer na mão todo dia.</p>
 
-        <!-- ── Hero ── -->
-        <section id="home" class="section hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <div class="hero-available">
-                            <span class="available-dot"></span>
-                            <span data-i18n="hero.available">Disponível para oportunidades</span>
-                        </div>
-                        <p class="hero-greeting" data-i18n="hero.greeting">Olá, eu sou</p>
-                        <h1 class="hero-name">Allison Freitas</h1>
-                        <h2 class="hero-title">
-                            <span class="typewriter"></span><span class="cursor">|</span>
-                        </h2>
-                        <p class="hero-description" data-i18n="hero.description">
-                            Criando experiências digitais com código limpo, design intuitivo e foco em performance. Apaixonado por transformar ideias em produtos reais.
-                        </p>
-                        <div class="hero-cta">
-                            <a href="#projects" class="btn btn-primary">
-                                <i class="fas fa-rocket"></i>
-                                <span data-i18n="hero.cta_projects">Ver Projetos</span>
-                            </a>
-                            <!-- <a href="./cv.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                                <i class="fas fa-file-download"></i>
-                                <span data-i18n="hero.cta_cv">Download CV</span>
-                            </a> -->
-                            <a href="#contact" class="btn btn-ghost">
-                                <i class="fas fa-envelope"></i>
-                                <span data-i18n="hero.cta_contact">Contato</span>
-                            </a>
-                        </div>
-                        <div class="social-links">
-                            <a href="https://github.com/Allisonfreittass" target="_blank" rel="noopener noreferrer" class="social-link">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="https://instagram.com/allisonfreittass" target="_blank" rel="noopener noreferrer" class="social-link">
-                                <i class="fab fa-instagram"></i> Instagram
-                            </a>
-                            <a href="https://linkedin.com/in/allisonfreittass" target="_blank" rel="noopener noreferrer" class="social-link">
-                                <i class="fab fa-linkedin"></i> LinkedIn
-                            </a>
-                        </div>
-                    </div>
-                    <div class="hero-avatar-wrapper">
-                        <div class="hero-avatar-ring">
-                            <img src="https://github.com/Allisonfreittass.png" alt="Allison Freitas" class="hero-avatar" />
-                        </div>
-                    </div>
+          <!-- Ficha 1 — AURIS -->
+          <article class="ficha">
+            <header class="ficha-head">
+              <h3 class="ficha-name">Auris</h3>
+              <p class="ficha-kind" data-i18n="systems.auris.kind">Desktop · Áudio + LLM</p>
+            </header>
+
+            <div class="ficha-body">
+              <p class="ficha-desc" data-i18n="systems.auris.desc">Uma janelinha que fica por cima da reunião e transforma cada call em resumo, próximos passos e o e-mail de follow-up já escrito. Captura o áudio do sistema e do microfone em canais separados, transcreve na própria máquina com faster-whisper e só então conversa com o modelo. Nenhum bot entra na chamada.</p>
+
+              <div class="ficha-cols">
+                <div class="ficha-col">
+                  <h4 class="ficha-label" data-i18n="systems.autonomous">Roda sozinho</h4>
+                  <ul class="runlist">
+                    <li data-i18n="systems.auris.auto.0">captura por WASAPI loopback com detecção de voz — ninguém aperta gravar</li>
+                    <li data-i18n="systems.auris.auto.1">a transcrição roda local; o áudio da reunião não sai do computador</li>
+                    <li data-i18n="systems.auris.auto.2">o sidecar Python é supervisionado e volta sozinho, com backoff</li>
+                  </ul>
                 </div>
-            </div>
-            <div class="hero-scroll" aria-hidden="true">
-                <div class="hero-scroll-line"></div>
-            </div>
-        </section>
-
-        <!-- ── Sobre ── -->
-        <section id="about" class="section about">
-            <div class="container">
-                <h2 class="section-title" data-i18n="about.title">Sobre Mim</h2>
-                <p class="about-text" data-i18n="about.text">
-                    Sou um desenvolvedor fullstack apaixonado por criar soluções elegantes e eficientes.
-                    Formado em Ciências da Computação e trabalhando na F2 Tecnologia,
-                    combino conhecimento técnico com uma abordagem centrada no usuário para
-                    desenvolver aplicações que fazem a diferença.
-                </p>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3 class="skill-title">
-                            <i class="fas fa-laptop-code"></i>
-                            <span data-i18n="about.skills.frontend">Frontend</span>
-                        </h3>
-                        <ul class="skill-list">
-                            <li>React & Next.js</li>
-                            <li>Vue 3</li>
-                            <li>TypeScript</li>
-                            <li>HTML5 & CSS3</li>
-                            <li>Tailwind CSS</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card">
-                        <h3 class="skill-title">
-                            <i class="fas fa-server"></i>
-                            <span data-i18n="about.skills.backend">Backend</span>
-                        </h3>
-                        <ul class="skill-list">
-                            <li>Node.js & Express</li>
-                            <li>Python / FastAPI</li>
-                            <li>Java</li>
-                            <li>RESTful APIs</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card">
-                        <h3 class="skill-title">
-                            <i class="fas fa-database"></i>
-                            <span data-i18n="about.skills.database">Banco de Dados</span>
-                        </h3>
-                        <ul class="skill-list">
-                            <li>PostgreSQL</li>
-                            <li>MongoDB</li>
-                            <li>SQL</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card">
-                        <h3 class="skill-title">
-                            <i class="fas fa-tools"></i>
-                            <span data-i18n="about.skills.devops">DevOps & Outros</span>
-                        </h3>
-                        <ul class="skill-list">
-                            <li>Solidity / Hardhat</li>
-                            <li>Docker</li>
-                            <li>Git & GitHub</li>
-                            <li>CI/CD</li>
-                        </ul>
-                    </div>
+                <div class="ficha-col">
+                  <h4 class="ficha-label" data-i18n="systems.stack">Pilha</h4>
+                  <p class="stack">Electron · React · TypeScript · Python · faster-whisper · Anthropic SDK</p>
+                  <p class="ficha-aside" data-i18n="systems.auris.aside">Electron endurecido: sandbox, isolamento de contexto, CSP estrita e a chave de API cifrada com o safeStorage do Windows.</p>
                 </div>
-            </div>
-        </section>
+              </div>
 
-        <!-- ── Experiência ── -->
-        <section id="experience" class="section experience">
-            <div class="container">
-                <h2 class="section-title" data-i18n="experience.title">Experiência</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <div class="card timeline-card">
-                            <div class="timeline-meta">
-                                <span class="timeline-badge" data-i18n="experience.present">Presente</span>
-                            </div>
-                            <h3 class="timeline-company">F2 Tecnologia Digital</h3>
-                            <p class="timeline-role" data-i18n="experience.f2.role">Desenvolvedor Fullstack</p>
-                            <p class="timeline-period">2025 — <span data-i18n="experience.present">Presente</span></p>
-                            <p class="timeline-desc" data-i18n="experience.f2.desc">
-                                Desenvolvimento de aplicações web fullstack com React, Node.js e MongoDB. Responsável por integrações com ERPs externos, autenticação JWT e deploy de aplicações SaaS em produção.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="card timeline-card">
-                            <div class="timeline-meta"></div>
-                            <h3 class="timeline-company" data-i18n="experience.edu.name">Ciência da Computação</h3>
-                            <p class="timeline-role" data-i18n="experience.edu.institution">Concluído</p>
-                            <p class="timeline-period">2022 — 2025</p>
-                            <p class="timeline-desc" data-i18n="experience.edu.desc">
-                                Bacharelado em Ciência da Computação com foco em desenvolvimento de software, estruturas de dados e fundamentos de computação.
-                            </p>
-                        </div>
-                    </div>
+              <p class="ficha-links">
+                <a class="link-out link-out--live" href="https://auris-landing.pages.dev/" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="systems.live">Ver funcionando</span>
+                  <span class="link-arrow" aria-hidden="true">→</span>
+                </a>
+                <a class="link-out" href="https://github.com/Allisonfreittass/AURIS" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="systems.code">Ver código</span>
+                  <span class="link-arrow" aria-hidden="true">→</span>
+                </a>
+              </p>
+            </div>
+          </article>
+
+          <!-- Ficha 2 — Thoth AI -->
+          <article class="ficha">
+            <header class="ficha-head">
+              <h3 class="ficha-name">Thoth AI</h3>
+              <p class="ficha-kind" data-i18n="systems.thoth.kind">SaaS · LLM</p>
+            </header>
+
+            <div class="ficha-body">
+              <p class="ficha-desc" data-i18n="systems.thoth.desc">Treina e conversa com modelos de linguagem sobre os documentos que você sobe. RAG para respostas ancoradas na fonte, fine-tuning assíncrono num microserviço Python, cobrança recorrente e métricas de uso em tempo real.</p>
+
+              <div class="ficha-cols">
+                <div class="ficha-col">
+                  <h4 class="ficha-label" data-i18n="systems.autonomous">Roda sozinho</h4>
+                  <ul class="runlist">
+                    <li data-i18n="systems.thoth.auto.0">fine-tuning entra em fila e devolve o modelo pronto</li>
+                    <li data-i18n="systems.thoth.auto.1">webhooks do Stripe renovam e cortam assinaturas</li>
+                    <li data-i18n="systems.thoth.auto.2">métricas de uso apuradas em tempo real</li>
+                  </ul>
                 </div>
-            </div>
-        </section>
-
-        <!-- ── Projetos ── -->
-        <section id="projects" class="section projects">
-            <div class="container">
-                <h2 class="section-title" data-i18n="projects.title">Projetos</h2>
-                <div class="projects-grid">
-                    <div class="card project-card">
-                        <div class="project-header">
-                            <i class="fas fa-brain"></i>
-                            <h3>Thoth AI</h3>
-                        </div>
-                        <p data-i18n="projects.thoth.desc">Plataforma SaaS completa para treinamento e chat com LLMs. Implementa RAG para respostas baseadas em documentos, fine-tuning assíncrono via microserviço Python, pagamentos recorrentes com Stripe e métricas de uso em tempo real.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Next.js 14</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Python / FastAPI</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">OpenAI / Groq</span>
-                            <span class="tech-tag">Stripe</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Allisonfreittass/thothai-web" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                                <i class="fab fa-github"></i>
-                                <span data-i18n="projects.code">Código</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card project-card">
-                        <div class="project-header">
-                            <i class="fas fa-cubes"></i>
-                            <h3>MyBlock — Frontend</h3>
-                        </div>
-                        <p data-i18n="projects.myblock_front.desc">Interface da plataforma de gestão de imóveis baseada em blockchain. Inclui autenticação, dashboard, portfólio de propriedades e fluxo completo de contratos de aluguel via smart contracts.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Vue 3</span>
-                            <span class="tech-tag">Vite</span>
-                            <span class="tech-tag">Pinia</span>
-                            <span class="tech-tag">Ethers.js</span>
-                            <span class="tech-tag">Web3</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Allisonfreittass/myblock-frontend" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                                <i class="fab fa-github"></i>
-                                <span data-i18n="projects.code">Código</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card project-card">
-                        <div class="project-header">
-                            <i class="fas fa-file-contract"></i>
-                            <h3>MyBlock — Backend</h3>
-                        </div>
-                        <p data-i18n="projects.myblock_back.desc">API e smart contracts do MyBlock. Arquitetura híbrida Web2/Web3 com contratos Solidity que automatizam aluguéis, aplicam multas por atraso (10%) e controlam status via blockchain. Inclui agendamento via cron e autenticação JWT.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Solidity</span>
-                            <span class="tech-tag">Hardhat</span>
-                            <span class="tech-tag">JWT</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Allisonfreittass/myblock-backend" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                                <i class="fab fa-github"></i>
-                                <span data-i18n="projects.code">Código</span>
-                            </a>
-                        </div>
-                    </div>
+                <div class="ficha-col">
+                  <h4 class="ficha-label" data-i18n="systems.stack">Pilha</h4>
+                  <p class="stack">Next.js 14 · TypeScript · Python/FastAPI · PostgreSQL · OpenAI · Groq · Stripe</p>
                 </div>
-            </div>
-        </section>
+              </div>
 
-        <!-- ── Contato ── -->
-        <section id="contact" class="section contact">
-            <div class="container">
-                <h2 class="section-title" data-i18n="contact.title">Contato</h2>
-                <div class="contact-card">
-                    <p class="contact-text" data-i18n="contact.text">Tem um projeto em mente ou quer trocar uma ideia? Me mande uma mensagem — ficarei feliz em conversar!</p>
-                    <div class="contact-links">
-                        <a href="https://linkedin.com/in/allisonfreittass" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                        <a href="https://github.com/Allisonfreittass" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
+              <p class="ficha-links">
+                <a class="link-out" href="https://github.com/Allisonfreittass/thothai-web" target="_blank" rel="noopener noreferrer">
+                  <span data-i18n="systems.code">Ver código</span>
+                  <span class="link-arrow" aria-hidden="true">→</span>
+                </a>
+              </p>
+            </div>
+          </article>
+
+          <!-- Ficha 3 — MyBlock -->
+          <article class="ficha">
+            <header class="ficha-head">
+              <h3 class="ficha-name">MyBlock</h3>
+              <p class="ficha-kind" data-i18n="systems.myblock.kind">Web3 · Imóveis</p>
+            </header>
+
+            <div class="ficha-body">
+              <p class="ficha-desc" data-i18n="systems.myblock.desc">Gestão de aluguéis onde o contrato é o sistema. Um contrato Solidity guarda o status, aplica 10% de multa no atraso e encerra o aluguel sem ninguém apertar botão. Arquitetura híbrida: Web2 para o que precisa ser rápido, Web3 para o que precisa ser incontestável.</p>
+
+              <div class="ficha-cols">
+                <div class="ficha-col">
+                  <h4 class="ficha-label" data-i18n="systems.autonomous">Roda sozinho</h4>
+                  <ul class="runlist">
+                    <li data-i18n="systems.myblock.auto.0">cron verifica vencimentos todo dia à meia-noite</li>
+                    <li data-i18n="systems.myblock.auto.1">a multa de 10% é aplicada pelo próprio contrato</li>
+                    <li data-i18n="systems.myblock.auto.2">o status do aluguel vive na blockchain, não num banco</li>
+                  </ul>
                 </div>
+                <div class="ficha-col">
+                  <h4 class="ficha-label" data-i18n="systems.layers">Camadas</h4>
+                  <dl class="layers">
+                    <dt data-i18n="systems.myblock.l0">Interface</dt>
+                    <dd>
+                      <span class="stack">Vue 3 · Vite · Pinia · Ethers.js</span>
+                      <a class="link-out link-out--sm" href="https://github.com/Allisonfreittass/myblock-frontend" target="_blank" rel="noopener noreferrer">
+                        <span data-i18n="systems.code">Ver código</span>
+                        <span class="link-arrow" aria-hidden="true">→</span>
+                      </a>
+                    </dd>
+                    <dt data-i18n="systems.myblock.l1">Contratos e API</dt>
+                    <dd>
+                      <span class="stack">Node · Express · MongoDB · Solidity · Hardhat · OpenZeppelin · JWT</span>
+                      <a class="link-out link-out--sm" href="https://github.com/Allisonfreittass/myblock-backend" target="_blank" rel="noopener noreferrer">
+                        <span data-i18n="systems.code">Ver código</span>
+                        <span class="link-arrow" aria-hidden="true">→</span>
+                      </a>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
             </div>
-        </section>
+          </article>
+        </div>
+      </section>
 
+      <!-- ─────────── Percurso ─────────── -->
+      <section class="band band--tint" id="percurso">
+        <div class="shell">
+          <h2 class="band-title" data-i18n="path.title">Percurso</h2>
+
+          <ol class="ledger">
+            <li class="ledger-row">
+              <p class="ledger-when" data-i18n="path.f2.when">mar 2025 —</p>
+              <div class="ledger-what">
+                <h3>F2 Tecnologia <span class="tag-now" data-i18n="path.now">atual</span></h3>
+                <p class="ledger-role" data-i18n="path.f2.role">Full-Stack Engineer</p>
+                <p class="ledger-desc" data-i18n="path.f2.desc">Duas APIs REST em produção, com endpoints públicos e webhooks ligando a plataforma a ERPs de terceiros. Deploy em Cloudflare Workers e Pages. Três fluxos de automação com n8n e LLMs entregues, cortando trabalho manual da operação. Rotina em inglês e revisão de código no GitHub.</p>
+              </div>
+            </li>
+            <li class="ledger-row">
+              <p class="ledger-when">2022 — 2025</p>
+              <div class="ledger-what">
+                <h3 data-i18n="path.edu.name">Ciência da Computação</h3>
+                <p class="ledger-role" data-i18n="path.edu.role">UNIS-MG · bacharelado concluído</p>
+                <p class="ledger-desc" data-i18n="path.edu.desc">Centro Universitário do Sul de Minas. Desenvolvimento de software, estruturas de dados e fundamentos de computação.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ─────────── Ferramentas ─────────── -->
+      <section class="band" id="ferramentas">
+        <div class="shell">
+          <h2 class="band-title" data-i18n="tools.title">Ferramentas</h2>
+
+          <dl class="toolset">
+            <dt data-i18n="tools.langs">Linguagens</dt>
+            <dd>JavaScript · TypeScript · Python · Solidity · SQL</dd>
+            <dt data-i18n="tools.backend">Backend</dt>
+            <dd>Node.js · Express · APIs REST · Webhooks · JWT</dd>
+            <dt data-i18n="tools.front">Frente</dt>
+            <dd>React · Next.js · Vue 3 · Vite · HTML · CSS</dd>
+            <dt data-i18n="tools.ai">IA e automação</dt>
+            <dd>n8n · Anthropic · OpenAI · agentes de IA · faster-whisper</dd>
+            <dt data-i18n="tools.data">Dados</dt>
+            <dd>PostgreSQL · MongoDB · SQL e NoSQL</dd>
+            <dt data-i18n="tools.ship">Entrega</dt>
+            <dd>Git · GitHub · Cloudflare Workers e Pages · Docker · Hostinger</dd>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ─────────── Contato ─────────── -->
+      <section class="band band--pine" id="contato">
+        <div class="shell">
+          <p class="eyebrow" data-i18n="contact.eyebrow">Aberto a propostas</p>
+          <h2 class="contact-line" data-i18n="contact.line">Se você tem um sistema que precisa rodar sem supervisão, eu quero ouvir sobre ele.</h2>
+          <p class="contact-meta" data-i18n="contact.meta">Varginha, MG · Aberto a realocação · Português nativo, inglês fluente</p>
+
+          <ul class="channels">
+            <li>
+              <a class="channel-cv" href="Allison_Freitas_Engenheiro_Software_CV_PT.pdf" data-i18n-href="contact.cvFile" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.586l-4.293-4.293 1.414-1.414L11 11.758V3h2v8.758l1.879-1.879 1.414 1.414L12 15.586zM4 18h16v2H4z"/></svg>
+                <span data-i18n="contact.cv">Currículo (PDF)</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/allisonfreittass" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Allisonfreittass" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/allisonfreittass" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                Instagram
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; <span id="copyright-year"></span> Allison Freitas. <span data-i18n="footer">Todos os direitos reservados.</span></p>
-        </div>
+      <div class="shell footer-inner">
+        <p>&copy; <span id="year"></span> Allison Freitas</p>
+        <p class="footer-note" data-i18n="footer.note">Escrito à mão em HTML, CSS e JavaScript.</p>
+      </div>
     </footer>
 
     <script src="script.js"></script>
