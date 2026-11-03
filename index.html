@@ -1,328 +1,396 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Allison Freitas — Sistemas que rodam sozinhos</title>
-    <meta name="description" content="Allison Freitas, engenheiro de software: backend, APIs e automação. Assistente de chamadas com transcrição local, contratos Solidity que aplicam a própria multa, automações com n8n e LLMs em produção." />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <link rel="canonical" href="https://allisonfreittass.github.io/" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Allison Freitas</title>
+  <meta name="description" content="Allison Freitas, engenheiro de software full-stack. Backend, APIs e agentes de IA: sistemas que rodam sozinhos." />
+  <meta name="theme-color" content="#0002CC" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://allisonfreittass.github.io/" />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://allisonfreittass.github.io/" />
-    <meta property="og:site_name" content="Allison Freitas" />
-    <meta property="og:locale" content="pt_BR" />
-    <meta property="og:title" content="Allison Freitas — Sistemas que rodam sozinhos" />
-    <meta property="og:description" content="Backend, APIs e automação. Transcrição local com faster-whisper, contratos Solidity que aplicam a própria multa, automações com n8n e LLMs." />
-    <meta property="og:image" content="https://github.com/Allisonfreittass.png" />
-    <meta property="og:image:alt" content="Foto de Allison Freitas" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Allison Freitas — Sistemas que rodam sozinhos" />
-    <meta name="twitter:description" content="Backend, APIs e automação. Transcrição local com faster-whisper, contratos Solidity que aplicam a própria multa, automações com n8n e LLMs." />
-    <meta name="twitter:image" content="https://github.com/Allisonfreittass.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://allisonfreittass.github.io/" />
+  <meta property="og:site_name" content="Allison Freitas" />
+  <meta property="og:title" content="Allison Freitas — Sistemas que rodam sozinhos" />
+  <meta property="og:description" content="Engenheiro de software full-stack. Backend, APIs e agentes de IA. Visão, Auris, um emulador de Game Boy em Go e mais." />
+  <meta property="og:image" content="https://github.com/Allisonfreittass.png" />
+  <meta name="twitter:card" content="summary" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    /* Intro só roda com JS e sem reduced-motion; sem isso, a página aparece pronta. */
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('intro');
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#conteudo" data-i18n="skip">Pular para o conteúdo</a>
 
-  <body>
-    <a class="skip-link" href="#conteudo" data-i18n="a11y.skip">Pular para o conteúdo</a>
-
-    <header class="topbar">
-      <div class="shell topbar-inner">
-        <a class="wordmark" href="#topo">
-          Allison Freitas
-          <span class="wordmark-state" aria-hidden="true"></span>
+  <!-- ─────────── Cabeçalho ─────────── -->
+  <header class="topbar" id="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#topo" aria-label="Allison Freitas — início">
+        <span class="mark" aria-hidden="true"><span class="mark-pupil"></span></span>
+        <span class="brand-name">ALLISON FREITAS</span>
+      </a>
+      <nav class="nav" aria-label="Seções">
+        <a href="#visao" data-i18n="nav.vision">Visão</a>
+        <a href="#projetos" data-i18n="nav.work">Projetos</a>
+        <a href="#percurso" data-i18n="nav.path">Percurso</a>
+        <a href="#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+      <div class="topbar-actions">
+        <button class="lang" id="lang" type="button" aria-label="Mudar idioma para inglês">
+          <span data-lang-opt="pt">PT</span><span aria-hidden="true">/</span><span data-lang-opt="en">EN</span>
+        </button>
+        <a class="pill pill--light" href="#contato">
+          <span data-i18n="cta.talk">Falar comigo</span>
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
+      </div>
+    </div>
+  </header>
 
-        <nav class="nav" id="nav" aria-label="Seções">
-          <a href="#sistemas"    data-i18n="nav.systems">Sistemas</a>
-          <a href="#percurso"    data-i18n="nav.path">Percurso</a>
-          <a href="#ferramentas" data-i18n="nav.tools">Ferramentas</a>
-          <a href="#contato"     data-i18n="nav.contact">Contato</a>
-        </nav>
+  <main id="conteudo">
 
-        <div class="topbar-actions">
-          <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">
-            <span id="lang-label">EN</span>
-          </button>
-          <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="nav" data-i18n-label="a11y.menu" aria-label="Abrir menu">
-            <span></span><span></span><span></span>
-          </button>
+    <!-- ─────────── Hero ─────────── -->
+    <section class="hero" id="topo" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <div class="hero-meta">
+          <p class="label hero-fade" data-i18n-html="hero.left">[ Engenheiro de software ]<br>Full-stack · Backend · IA<br>Varginha, MG — Brasil</p>
+          <p class="label label--right hero-fade" data-i18n-html="hero.right">[ Disponível ]<br>Aberto a realocação<br>Holanda · União Europeia</p>
+        </div>
+
+        <div class="hero-stage">
+          <h1 class="hero-name" id="hero-title">
+            <span class="line" data-par="-1"><span class="line-inner">Allison</span></span>
+            <span class="line line--end" data-par="1"><span class="line-inner">Freitas</span></span>
+          </h1>
+
+          <div class="orb-anchor" aria-hidden="true">
+            <div class="orb-par" id="orb-par">
+              <div class="orb-intro">
+                <svg class="seal" viewBox="0 0 200 200">
+                  <defs><path id="seal-path" d="M100,100 m-92,0 a92,92 0 1,1 184,0 a92,92 0 1,1 -184,0"/></defs>
+                  <text><textPath href="#seal-path" data-i18n="seal">SISTEMAS QUE RODAM SOZINHOS ✦ SISTEMAS QUE RODAM SOZINHOS ✦ </textPath></text>
+                </svg>
+                <div class="orb" id="hero-orb"><span class="orb-pupil"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-foot">
+          <div class="hero-pitch">
+            <p class="lede hero-fade" data-i18n="hero.lede">Construo sistemas que continuam rodando quando ninguém está olhando, de APIs em produção a agentes com memória.</p>
+            <div class="actions hero-fade">
+              <a class="pill pill--signal" href="#projetos">
+                <span data-i18n="cta.work">Ver projetos</span>
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+              </a>
+              <a class="pill pill--line" href="Allison_Freitas_Engenheiro_Software_CV_PT.pdf" data-i18n-href="cv.file" target="_blank" rel="noopener noreferrer">
+                <span data-i18n="cta.cv">Currículo</span> <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
+          <p class="label label--right hero-fade hide-sm" data-i18n-html="hero.loop">Criar<br>Testar<br>Deixar rodando</p>
         </div>
       </div>
-    </header>
+    </section>
 
-    <main id="conteudo">
-
-      <!-- ─────────── Hero ─────────── -->
-      <section class="band band--pine hero" id="topo">
-        <div class="shell">
-          <p class="eyebrow" data-i18n="hero.eyebrow">Backend, APIs e automação · F2 Tecnologia · Aberto a propostas</p>
-
-          <h1 class="hero-thesis" data-i18n="hero.thesis">Eu construo sistemas que continuam rodando quando eu não estou olhando.</h1>
-
-          <p class="hero-lede" data-i18n="hero.lede">Um assistente que transcreve a chamada sem o áudio sair da máquina, contratos que aplicam a própria multa, crons que fecham o mês. Backend, APIs e automação — com React na frente quando precisa.</p>
-
-          <!-- ── Elemento assinatura: a máquina de estados de um contrato real ── -->
-          <figure class="machine">
-            <figcaption class="machine-cap">
-              <span data-i18n="machine.source">MyBlock · contrato de aluguel</span>
-              <span class="machine-lang">Solidity</span>
-            </figcaption>
-
-            <ol class="machine-rail" id="machine-rail">
-              <li class="node is-done">
-                <span class="node-mark" aria-hidden="true"></span>
-                <span class="node-name" data-i18n="machine.s0">criado</span>
-                <span class="node-when">d+0</span>
-              </li>
-              <li class="node is-done">
-                <span class="node-mark" aria-hidden="true"></span>
-                <span class="node-name" data-i18n="machine.s1">ativo</span>
-                <span class="node-when">d+1</span>
-              </li>
-              <li class="node is-done">
-                <span class="node-mark" aria-hidden="true"></span>
-                <span class="node-name" data-i18n="machine.s2">vencido</span>
-                <span class="node-when">d+31</span>
-              </li>
-              <li class="node node--alert is-done">
-                <span class="node-mark" aria-hidden="true"></span>
-                <span class="node-name" data-i18n="machine.s3">multa 10%</span>
-                <span class="node-when">d+31</span>
-              </li>
-              <li class="node is-done">
-                <span class="node-mark" aria-hidden="true"></span>
-                <span class="node-name" data-i18n="machine.s4">quitado</span>
-                <span class="node-when">d+33</span>
-              </li>
-            </ol>
-
-            <p class="machine-log" id="machine-log" aria-live="off">pagamento liquidado — status encerrado</p>
-          </figure>
+    <!-- ─────────── Números ─────────── -->
+    <section class="proof" aria-label="Números">
+      <div class="wrap proof-grid">
+        <div class="stat" data-reveal>
+          <p class="stat-n"><span data-count="2">2</span></p>
+          <p class="label stat-l" data-i18n="proof.apis">APIs REST em produção na F2</p>
         </div>
-      </section>
+        <div class="stat" data-reveal>
+          <p class="stat-n"><span data-count="6">6</span></p>
+          <p class="label stat-l" data-i18n="proof.systems">Sistemas próprios, código aberto</p>
+        </div>
+        <div class="stat" data-reveal>
+          <p class="stat-n stat-n--signal"><span data-count="498">498</span><small>/500</small></p>
+          <p class="label stat-l" data-i18n="proof.gb">Opcodes SM83 validados no emulador</p>
+        </div>
+        <div class="stat" data-reveal>
+          <p class="stat-n"><span data-count="2022" data-count-from="2010">2022</span></p>
+          <p class="label stat-l" data-i18n="proof.since">Programando desde · profissional desde 2025</p>
+        </div>
+      </div>
+    </section>
 
-      <!-- ─────────── Sistemas ─────────── -->
-      <section class="band" id="sistemas">
-        <div class="shell">
-          <h2 class="band-title" data-i18n="systems.title">Sistemas</h2>
-          <p class="band-note" data-i18n="systems.note">Três produtos completos. Cada um resolve alguma coisa que, sem ele, alguém teria que fazer na mão todo dia.</p>
+    <!-- faixa -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <p>Visão ✦ Auris ✦ Game Boy ✦ Thoth AI ✦ MyBlock ✦ Webhook-Go ✦&nbsp;</p>
+        <p>Visão ✦ Auris ✦ Game Boy ✦ Thoth AI ✦ MyBlock ✦ Webhook-Go ✦&nbsp;</p>
+      </div>
+    </div>
 
-          <!-- Ficha 1 — AURIS -->
-          <article class="ficha">
-            <header class="ficha-head">
-              <h3 class="ficha-name">Auris</h3>
-              <p class="ficha-kind" data-i18n="systems.auris.kind">Desktop · Áudio + LLM</p>
-            </header>
+    <!-- ─────────── Visão ─────────── -->
+    <section class="section" id="visao" aria-labelledby="visao-title">
+      <div class="wrap">
+        <article class="feature" data-reveal>
+          <div class="feature-top">
+            <p class="label label--lav" data-i18n="vision.kicker">[ Em destaque ] Pesquisa pessoal · 2026</p>
+            <p class="label label--lav" data-i18n="vision.status">Fases 0–6 e 9 construídas</p>
+          </div>
 
-            <div class="ficha-body">
-              <p class="ficha-desc" data-i18n="systems.auris.desc">Uma janelinha que fica por cima da reunião e transforma cada call em resumo, próximos passos e o e-mail de follow-up já escrito. Captura o áudio do sistema e do microfone em canais separados, transcreve na própria máquina com faster-whisper e só então conversa com o modelo. Nenhum bot entra na chamada.</p>
+          <div class="feature-head">
+            <h2 class="feature-title" id="visao-title">VISÃO</h2>
+            <div class="bubble" id="bubble" aria-hidden="true">
+              <div class="bubble-ring"></div>
+              <div class="orb orb--sm" id="bubble-orb"><span class="orb-pupil"></span></div>
+              <span class="chip" data-state="0" data-i18n="state.memory">memória</span>
+              <span class="chip" data-state="1" data-i18n="state.curiosity">curiosidade</span>
+              <span class="chip" data-state="2" data-i18n="state.reflection">reflexão</span>
+              <span class="chip" data-state="3" data-i18n="state.goals">metas</span>
+            </div>
+          </div>
 
-              <div class="ficha-cols">
-                <div class="ficha-col">
-                  <h4 class="ficha-label" data-i18n="systems.autonomous">Roda sozinho</h4>
-                  <ul class="runlist">
-                    <li data-i18n="systems.auris.auto.0">captura por WASAPI loopback com detecção de voz — ninguém aperta gravar</li>
-                    <li data-i18n="systems.auris.auto.1">a transcrição roda local; o áudio da reunião não sai do computador</li>
-                    <li data-i18n="systems.auris.auto.2">o sidecar Python é supervisionado e volta sozinho, com backoff</li>
-                  </ul>
-                </div>
-                <div class="ficha-col">
-                  <h4 class="ficha-label" data-i18n="systems.stack">Pilha</h4>
-                  <p class="stack">Electron · React · TypeScript · Python · faster-whisper · Anthropic SDK</p>
-                  <p class="ficha-aside" data-i18n="systems.auris.aside">Electron endurecido: sandbox, isolamento de contexto, CSP estrita e a chave de API cifrada com o safeStorage do Windows.</p>
+          <div class="feature-body">
+            <div class="feature-copy">
+              <p class="lede" data-i18n="vision.lede">Uma arquitetura cognitiva persistente em torno de um LLM substituível: memória autobiográfica curada, busca orientada por incerteza, reflexão e metas que sobrevivem entre conversas.</p>
+              <p class="body-lav" data-i18n="vision.note">O agente nasce sem nome e delibera sobre o próprio nome. O sistema não alega consciência, sentimentos ou vida.</p>
+              <ul class="ticks">
+                <li data-i18n="vision.f0">Memória curada, opt-in</li>
+                <li data-i18n="vision.f1">Curiosidade com fontes citadas</li>
+                <li data-i18n="vision.f2">Metas só rodam com aprovação</li>
+                <li data-i18n="vision.f3">Adaptação versionada e reversível</li>
+                <li data-i18n="vision.f4">Voz self-hosted</li>
+                <li data-i18n="vision.f5">Orçamento e custo por chamada</li>
+              </ul>
+            </div>
+
+            <div class="feature-side">
+              <div class="roadmap" id="roadmap">
+                <p class="label label--lav" data-i18n="vision.roadmap">Roadmap · fases 0–9</p>
+                <ol class="phases">
+                  <li class="ph is-done">0</li><li class="ph is-done">1</li><li class="ph is-built">2</li><li class="ph is-done">3</li><li class="ph is-done">4</li>
+                  <li class="ph is-built">5</li><li class="ph is-done">6</li><li class="ph">7</li><li class="ph">8</li><li class="ph is-built">9</li>
+                </ol>
+                <div class="legend label">
+                  <span><i class="sw sw--done"></i><span data-i18n="legend.done">Concluída</span></span>
+                  <span><i class="sw sw--built"></i><span data-i18n="legend.built">Construída</span></span>
+                  <span><i class="sw"></i><span data-i18n="legend.planned">Planejada</span></span>
                 </div>
               </div>
+              <p class="label label--lav stack">Python 3.12 · FastAPI · PostgreSQL · Alembic · React · Vite · Docker</p>
+              <a class="pill pill--light" href="https://github.com/Allisonfreittass/visao" target="_blank" rel="noopener noreferrer">
+                <span data-i18n="cta.repo">Ver repositório</span>
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-              <p class="ficha-links">
-                <a class="link-out link-out--live" href="https://auris-landing.pages.dev/" target="_blank" rel="noopener noreferrer">
-                  <span data-i18n="systems.live">Ver funcionando</span>
-                  <span class="link-arrow" aria-hidden="true">→</span>
-                </a>
-                <a class="link-out" href="https://github.com/Allisonfreittass/AURIS" target="_blank" rel="noopener noreferrer">
-                  <span data-i18n="systems.code">Ver código</span>
-                  <span class="link-arrow" aria-hidden="true">→</span>
-                </a>
+    <!-- ─────────── Projetos ─────────── -->
+    <section class="section section--flush" id="projetos" aria-labelledby="proj-title">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <h2 class="h-xl" id="proj-title"><span data-i18n="work.title">Sistemas</span><span class="dot">.</span></h2>
+          <p class="label label--muted" data-i18n="work.count">[ 05 projetos ]</p>
+        </div>
+
+        <div class="cards">
+          <!-- Auris -->
+          <article class="card" data-reveal>
+            <div class="thumb thumb--wave" aria-hidden="true">
+              <div class="wave">
+                <i style="--h:18%"></i><i style="--h:34%"></i><i style="--h:58%"></i><i style="--h:30%"></i><i style="--h:82%"></i><i style="--h:64%"></i>
+                <i style="--h:26%"></i><i style="--h:48%"></i><i class="hot" style="--h:92%"></i><i style="--h:70%"></i><i style="--h:38%"></i><i style="--h:22%"></i>
+                <i style="--h:54%"></i><i class="hot" style="--h:86%"></i><i style="--h:60%"></i><i style="--h:32%"></i><i style="--h:74%"></i><i style="--h:44%"></i>
+                <i style="--h:20%"></i><i style="--h:56%"></i><i style="--h:78%"></i><i style="--h:40%"></i><i style="--h:28%"></i><i style="--h:16%"></i>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-kind label"><span data-i18n="work.auris.kind">Desktop · Áudio + LLM</span></p>
+              <h3 class="card-title">AURIS</h3>
+              <p class="card-desc" data-i18n="work.auris.desc">Copiloto de chamadas de venda: resumo, próximos passos e follow-up já escrito. Transcreve na própria máquina, e nenhum bot entra na reunião.</p>
+              <p class="label label--muted stack">Electron · React · Python · faster-whisper · Claude</p>
+              <p class="card-links">
+                <a class="link link--signal" href="https://auris-landing.pages.dev/" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.live">Ver funcionando</span> ↗</a>
+                <a class="link" href="https://github.com/Allisonfreittass/AURIS" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.code">Código</span> ↗</a>
               </p>
             </div>
           </article>
 
-          <!-- Ficha 2 — Thoth AI -->
-          <article class="ficha">
-            <header class="ficha-head">
-              <h3 class="ficha-name">Thoth AI</h3>
-              <p class="ficha-kind" data-i18n="systems.thoth.kind">SaaS · LLM</p>
-            </header>
-
-            <div class="ficha-body">
-              <p class="ficha-desc" data-i18n="systems.thoth.desc">Treina e conversa com modelos de linguagem sobre os documentos que você sobe. RAG para respostas ancoradas na fonte, fine-tuning assíncrono num microserviço Python, cobrança recorrente e métricas de uso em tempo real.</p>
-
-              <div class="ficha-cols">
-                <div class="ficha-col">
-                  <h4 class="ficha-label" data-i18n="systems.autonomous">Roda sozinho</h4>
-                  <ul class="runlist">
-                    <li data-i18n="systems.thoth.auto.0">fine-tuning entra em fila e devolve o modelo pronto</li>
-                    <li data-i18n="systems.thoth.auto.1">webhooks do Stripe renovam e cortam assinaturas</li>
-                    <li data-i18n="systems.thoth.auto.2">métricas de uso apuradas em tempo real</li>
-                  </ul>
+          <!-- Game Boy -->
+          <article class="card" data-reveal>
+            <div class="thumb thumb--pixel" aria-hidden="true">
+              <div class="pixel">
+                <div class="pixel-grid">
+                  <i class="o"></i><i class="o"></i><i></i><i></i><i></i><i></i><i class="o"></i><i class="o"></i>
+                  <i class="o"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="o"></i>
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                  <i class="o"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="o"></i>
+                  <i class="o"></i><i class="o"></i><i></i><i></i><i></i><i></i><i class="o"></i><i class="o"></i>
                 </div>
-                <div class="ficha-col">
-                  <h4 class="ficha-label" data-i18n="systems.stack">Pilha</h4>
-                  <p class="stack">Next.js 14 · TypeScript · Python/FastAPI · PostgreSQL · OpenAI · Groq · Stripe</p>
-                </div>
+                <span class="pixel-pupil"></span>
               </div>
-
-              <p class="ficha-links">
-                <a class="link-out" href="https://github.com/Allisonfreittass/thothai-web" target="_blank" rel="noopener noreferrer">
-                  <span data-i18n="systems.code">Ver código</span>
-                  <span class="link-arrow" aria-hidden="true">→</span>
-                </a>
+            </div>
+            <div class="card-body">
+              <p class="card-kind label"><span data-i18n="work.gb.kind">Emulador · Go</span></p>
+              <h3 class="card-title">GAME BOY</h3>
+              <p class="card-desc" data-i18n="work.gb.desc">Emulador do Game Boy (DMG) em Go: CPU SM83 completa, PPU pixel-perfect no dmg-acid2, áudio de 4 canais e saves em bateria.</p>
+              <p class="label label--muted stack">Go · Ebitengine · MBC1/2/3/5 · Blargg</p>
+              <p class="card-links">
+                <a class="link link--signal" href="https://github.com/Allisonfreittass/gameboy" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.code">Código</span> ↗</a>
               </p>
             </div>
           </article>
 
-          <!-- Ficha 3 — MyBlock -->
-          <article class="ficha">
-            <header class="ficha-head">
-              <h3 class="ficha-name">MyBlock</h3>
-              <p class="ficha-kind" data-i18n="systems.myblock.kind">Web3 · Imóveis</p>
-            </header>
-
-            <div class="ficha-body">
-              <p class="ficha-desc" data-i18n="systems.myblock.desc">Gestão de aluguéis onde o contrato é o sistema. Um contrato Solidity guarda o status, aplica 10% de multa no atraso e encerra o aluguel sem ninguém apertar botão. Arquitetura híbrida: Web2 para o que precisa ser rápido, Web3 para o que precisa ser incontestável.</p>
-
-              <div class="ficha-cols">
-                <div class="ficha-col">
-                  <h4 class="ficha-label" data-i18n="systems.autonomous">Roda sozinho</h4>
-                  <ul class="runlist">
-                    <li data-i18n="systems.myblock.auto.0">cron verifica vencimentos todo dia à meia-noite</li>
-                    <li data-i18n="systems.myblock.auto.1">a multa de 10% é aplicada pelo próprio contrato</li>
-                    <li data-i18n="systems.myblock.auto.2">o status do aluguel vive na blockchain, não num banco</li>
-                  </ul>
-                </div>
-                <div class="ficha-col">
-                  <h4 class="ficha-label" data-i18n="systems.layers">Camadas</h4>
-                  <dl class="layers">
-                    <dt data-i18n="systems.myblock.l0">Interface</dt>
-                    <dd>
-                      <span class="stack">Vue 3 · Vite · Pinia · Ethers.js</span>
-                      <a class="link-out link-out--sm" href="https://github.com/Allisonfreittass/myblock-frontend" target="_blank" rel="noopener noreferrer">
-                        <span data-i18n="systems.code">Ver código</span>
-                        <span class="link-arrow" aria-hidden="true">→</span>
-                      </a>
-                    </dd>
-                    <dt data-i18n="systems.myblock.l1">Contratos e API</dt>
-                    <dd>
-                      <span class="stack">Node · Express · MongoDB · Solidity · Hardhat · OpenZeppelin · JWT</span>
-                      <a class="link-out link-out--sm" href="https://github.com/Allisonfreittass/myblock-backend" target="_blank" rel="noopener noreferrer">
-                        <span data-i18n="systems.code">Ver código</span>
-                        <span class="link-arrow" aria-hidden="true">→</span>
-                      </a>
-                    </dd>
-                  </dl>
-                </div>
+          <!-- Thoth -->
+          <article class="card" data-reveal>
+            <div class="thumb thumb--doc" aria-hidden="true">
+              <div class="doc doc--back"></div>
+              <div class="doc doc--front">
+                <i style="--w:70%" class="c"></i><i style="--w:100%"></i><i style="--w:88%"></i><i style="--w:55%" class="s"></i><i style="--w:80%"></i>
               </div>
             </div>
+            <div class="card-body">
+              <p class="card-kind label"><span data-i18n="work.thoth.kind">SaaS · LLM</span></p>
+              <h3 class="card-title">THOTH AI</h3>
+              <p class="card-desc" data-i18n="work.thoth.desc">Treina e conversa com modelos sobre os seus documentos. RAG ancorado na fonte, fine-tuning assíncrono e cobrança recorrente via Stripe.</p>
+              <p class="label label--muted stack">Next.js 14 · FastAPI · PostgreSQL · Stripe</p>
+              <p class="card-links">
+                <a class="link link--signal" href="https://github.com/Allisonfreittass/thothai-web" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.code">Código</span> ↗</a>
+              </p>
+            </div>
           </article>
+
+          <!-- MyBlock -->
+          <article class="card" data-reveal>
+            <div class="thumb thumb--chain" aria-hidden="true">
+              <div class="chain">
+                <span class="blk" data-i18n="chain.created">criado</span><i></i>
+                <span class="blk" data-i18n="chain.active">ativo</span><i></i>
+                <span class="blk blk--fine" data-i18n="chain.fine">multa 10%</span><i></i>
+                <span class="blk blk--paid" data-i18n="chain.paid">quitado</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-kind label"><span data-i18n="work.mb.kind">Web3 · Imóveis</span></p>
+              <h3 class="card-title">MYBLOCK</h3>
+              <p class="card-desc" data-i18n="work.mb.desc">Aluguéis onde o contrato é o sistema: Solidity guarda o status, aplica 10% de multa no atraso e encerra o aluguel sozinho.</p>
+              <p class="label label--muted stack">Solidity · Hardhat · Node · Vue 3 · Ethers.js</p>
+              <p class="card-links">
+                <a class="link link--signal" href="https://github.com/Allisonfreittass/myblock-backend" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.contracts">Contratos</span> ↗</a>
+                <a class="link" href="https://github.com/Allisonfreittass/myblock-frontend" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.ui">Interface</span> ↗</a>
+              </p>
+            </div>
+          </article>
+
+          <!-- webhook-go -->
+          <article class="card" data-reveal>
+            <div class="thumb thumb--hook" aria-hidden="true">
+              <div class="hook">
+                <span class="node">POST</span>
+                <span class="track"><i class="packet"></i></span>
+                <span class="node node--light" data-i18n="hook.queue">fila</span>
+                <span class="track"><i class="packet packet--late"></i></span>
+                <span class="node node--signal"><span data-i18n="hook.deliver">entrega</span> <b class="retry">↻</b></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-kind label"><span data-i18n="work.hook.kind">Infra · Go · em construção</span></p>
+              <h3 class="card-title">WEBHOOK-GO</h3>
+              <p class="card-desc" data-i18n="work.hook.desc">Gateway de webhooks self-hosted. Recebe eventos de qualquer origem e grava o evento e a entrega pendente na mesma transação antes de responder 202, então nada se perde. Próximo passo: o worker de reentrega com tentativas agendadas.</p>
+              <p class="label label--muted stack">Go · net/http · PostgreSQL · pgx</p>
+              <p class="card-links">
+                <a class="link link--signal" href="https://github.com/Allisonfreittass/webhook-go" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.code">Código</span> ↗</a>
+              </p>
+            </div>
+          </article>
+
+          <!-- CTA -->
+          <a class="card card--cta" href="https://github.com/Allisonfreittass" target="_blank" rel="noopener noreferrer" data-reveal>
+            <span class="label">[ GitHub ]</span>
+            <span class="card-cta-title" data-i18n="work.open">Todo o código está aberto ↗</span>
+          </a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ─────────── Percurso ─────────── -->
-      <section class="band band--tint" id="percurso">
-        <div class="shell">
-          <h2 class="band-title" data-i18n="path.title">Percurso</h2>
-
+    <!-- ─────────── Percurso ─────────── -->
+    <section class="paper" id="percurso" aria-labelledby="perc-title">
+      <div class="wrap paper-grid">
+        <div class="paper-col" data-reveal>
+          <h2 class="h-lg" id="perc-title" data-i18n="path.title">Percurso</h2>
           <ol class="ledger">
-            <li class="ledger-row">
-              <p class="ledger-when" data-i18n="path.f2.when">mar 2025 —</p>
-              <div class="ledger-what">
-                <h3>F2 Tecnologia <span class="tag-now" data-i18n="path.now">atual</span></h3>
-                <p class="ledger-role" data-i18n="path.f2.role">Full-Stack Engineer</p>
-                <p class="ledger-desc" data-i18n="path.f2.desc">Duas APIs REST em produção, com endpoints públicos e webhooks ligando a plataforma a ERPs de terceiros. Deploy em Cloudflare Workers e Pages. Três fluxos de automação com n8n e LLMs entregues, cortando trabalho manual da operação. Rotina em inglês e revisão de código no GitHub.</p>
+            <li>
+              <p class="label ledger-when" data-i18n="path.f2.when">Mar 2025 — hoje</p>
+              <div>
+                <h3 data-i18n="path.f2.title">F2 Tecnologia · Full-Stack Engineer</h3>
+                <p data-i18n="path.f2.desc">Duas APIs REST em produção, com webhooks ligando a plataforma a ERPs. Deploy em Cloudflare Workers e Pages. Automações com n8n e LLMs. Rotina em inglês e code review no GitHub.</p>
               </div>
             </li>
-            <li class="ledger-row">
-              <p class="ledger-when">2022 — 2025</p>
-              <div class="ledger-what">
-                <h3 data-i18n="path.edu.name">Ciência da Computação</h3>
-                <p class="ledger-role" data-i18n="path.edu.role">UNIS-MG · bacharelado concluído</p>
-                <p class="ledger-desc" data-i18n="path.edu.desc">Centro Universitário do Sul de Minas. Desenvolvimento de software, estruturas de dados e fundamentos de computação.</p>
+            <li>
+              <p class="label ledger-when">2022 — 2025</p>
+              <div>
+                <h3 data-i18n="path.edu.title">Ciência da Computação · UNIS-MG</h3>
+                <p data-i18n="path.edu.desc">Bacharelado concluído no Centro Universitário do Sul de Minas.</p>
               </div>
             </li>
           </ol>
         </div>
-      </section>
-
-      <!-- ─────────── Ferramentas ─────────── -->
-      <section class="band" id="ferramentas">
-        <div class="shell">
-          <h2 class="band-title" data-i18n="tools.title">Ferramentas</h2>
-
-          <dl class="toolset">
-            <dt data-i18n="tools.langs">Linguagens</dt>
-            <dd>JavaScript · TypeScript · Python · Solidity · SQL</dd>
-            <dt data-i18n="tools.backend">Backend</dt>
-            <dd>Node.js · Express · APIs REST · Webhooks · JWT</dd>
-            <dt data-i18n="tools.front">Frente</dt>
-            <dd>React · Next.js · Vue 3 · Vite · HTML · CSS</dd>
-            <dt data-i18n="tools.ai">IA e automação</dt>
-            <dd>n8n · Anthropic · OpenAI · agentes de IA · faster-whisper</dd>
-            <dt data-i18n="tools.data">Dados</dt>
-            <dd>PostgreSQL · MongoDB · SQL e NoSQL</dd>
-            <dt data-i18n="tools.ship">Entrega</dt>
-            <dd>Git · GitHub · Cloudflare Workers e Pages · Docker · Hostinger</dd>
-          </dl>
-        </div>
-      </section>
-
-      <!-- ─────────── Contato ─────────── -->
-      <section class="band band--pine" id="contato">
-        <div class="shell">
-          <p class="eyebrow" data-i18n="contact.eyebrow">Aberto a propostas</p>
-          <h2 class="contact-line" data-i18n="contact.line">Se você tem um sistema que precisa rodar sem supervisão, eu quero ouvir sobre ele.</h2>
-          <p class="contact-meta" data-i18n="contact.meta">Varginha, MG · Aberto a realocação · Português nativo, inglês fluente</p>
-
-          <ul class="channels">
-            <li>
-              <a class="channel-cv" href="Allison_Freitas_Engenheiro_Software_CV_PT.pdf" data-i18n-href="contact.cvFile" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.586l-4.293-4.293 1.414-1.414L11 11.758V3h2v8.758l1.879-1.879 1.414 1.414L12 15.586zM4 18h16v2H4z"/></svg>
-                <span data-i18n="contact.cv">Currículo (PDF)</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://linkedin.com/in/allisonfreittass" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/Allisonfreittass" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://instagram.com/allisonfreittass" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                Instagram
-              </a>
-            </li>
+        <div class="paper-col" data-reveal>
+          <h2 class="h-lg" data-i18n="path.stack">Pilha</h2>
+          <ul class="tags">
+            <li>TypeScript</li><li>Python</li><li>Go</li><li>Solidity</li><li>SQL</li><li>Node</li>
+            <li>FastAPI</li><li>React</li><li>Next.js</li><li>Vue</li><li>Electron</li><li>PostgreSQL</li>
+            <li>MongoDB</li><li>Docker</li><li>Cloudflare</li><li>n8n</li><li>Anthropic</li><li>OpenAI</li>
           </ul>
         </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="shell footer-inner">
-        <p>&copy; <span id="year"></span> Allison Freitas</p>
-        <p class="footer-note" data-i18n="footer.note">Escrito à mão em HTML, CSS e JavaScript.</p>
       </div>
-    </footer>
+    </section>
 
-    <script src="script.js"></script>
-  </body>
+    <!-- ─────────── Contato ─────────── -->
+    <section class="contact" id="contato" aria-labelledby="contato-title">
+      <div class="contact-seal hide-sm" aria-hidden="true">
+        <svg class="seal seal--spin" viewBox="0 0 200 200">
+          <defs><path id="seal-path-2" d="M100,100 m-92,0 a92,92 0 1,1 184,0 a92,92 0 1,1 -184,0"/></defs>
+          <text><textPath href="#seal-path-2" data-i18n="seal2">ABERTO A PROPOSTAS ✦ ABERTO A PROPOSTAS ✦ ABERTO A PROPOSTAS ✦ </textPath></text>
+        </svg>
+        <div class="mark mark--xl"><span class="mark-pupil"></span></div>
+      </div>
+      <div class="wrap contact-inner">
+        <p class="label label--lav" data-reveal data-i18n="contact.kicker">[ Contato ] Português nativo · inglês fluente</p>
+        <h2 class="contact-title" id="contato-title" data-reveal>
+          <span data-i18n="contact.l1">Vamos</span>
+          <span class="signal" data-i18n="contact.l2">construir.</span>
+        </h2>
+        <p class="lede" data-reveal data-i18n="contact.lede">Tem um sistema que precisa rodar sem supervisão? Quero ouvir sobre ele.</p>
+        <div class="actions" data-reveal>
+          <a class="pill pill--signal" href="https://linkedin.com/in/allisonfreittass" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a class="pill pill--line" href="https://github.com/Allisonfreittass" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a class="pill pill--line" href="https://instagram.com/allisonfreittass" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          <a class="pill pill--line" href="Allison_Freitas_Engenheiro_Software_CV_PT.pdf" data-i18n-href="cv.file" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.cvpdf">Currículo PDF</span> ↓</a>
+        </div>
+        <footer class="footer">
+          <span class="footer-brand">
+            <span class="mark mark--sm" aria-hidden="true"><span class="mark-pupil"></span></span>
+            <span class="label">© <span id="year">2026</span> Allison Freitas</span>
+          </span>
+          <p class="label" data-i18n="footer.note">Escrito à mão em HTML, CSS e JavaScript. Sem frameworks.</p>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>
